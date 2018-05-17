@@ -12,11 +12,20 @@
 }
 
 .flat:hover {
-	transform: scale(1.1);
+	transform: scale(1.02);
+	box-shadow: 0px 0px 20px 0px #000;
 }
 
 .flat-title {
-	margin-top: 10px;
 	font-weight: lighter;
 	font-family: sans-serif;
+	padding: 10px 10px 10px;
+	height: 40px;
+	color: #fff;
+	background: #050101; /* Old browsers */
+	background: -moz-linear-gradient(left,  #050101 0%, #898989 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  #050101 0%,#898989 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  #050101 0%,#898989 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050101', endColorstr='#898989',GradientType=1 ); /* IE6-9 */
+
 }
