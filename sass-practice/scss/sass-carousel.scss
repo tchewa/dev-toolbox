@@ -1,0 +1,274 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: $black;
+	height: 100%;
+	margin: 0px;
+	h1, h2 {
+		margin: 0px;
+	}
+	h2 {
+		font-family: 'Roboto', sans-serif;
+	}
+}
+
+.header {
+	width: 100%;
+	height: 500px;
+	position: relative;
+	box-shadow: 0px 4px 25px $black;
+
+	.message-box {
+		position: absolute;
+		z-index: 2;
+		width: 340px;
+		height: 450px;
+		background: $white;
+		top: 48%;
+		left: 10%;
+		transform: translateY(-50%);
+		border-radius: 15px 0px 15px 0px;
+		box-shadow: 0px 0px 10px 0px $black;
+
+		@include media($tablet) {
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 90%;
+		}
+
+		.title {
+			font-family: 'Roboto', sans-serif;
+			padding: 25px 25px 0px;
+			font-size: 20px;
+			font-weight: 100;
+			color: $blue;
+		}
+	}
+
+	.mask {
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+		.canvas-container {
+			overflow: hidden;
+			height: 100%;
+			display: flex;
+			flex-wrap: nowrap;
+			position: absolute;
+			left: 0;
+
+			.canvas {
+				height: 100%;
+				display: block;
+				min-width: calc(100%/4);
+
+				&.slide-1 {
+					background: url('http://res.cloudinary.com/tchewa/image/upload/v1510942735/teton_kk9cxk.png') top center no-repeat;
+					background-size: cover;
+				}
+
+				&.slide-2 {
+					background: url('http://res.cloudinary.com/tchewa/image/upload/v1510942735/moran_tzlfoq.png') top center no-repeat;
+					background-size: cover;
+				}
+
+				&.slide-3 {
+					background: url('http://res.cloudinary.com/tchewa/image/upload/v1510942735/firehole_i7tats.png') top center no-repeat;
+					background-size: cover;
+				}
+
+				&.slide-4 {
+					background: url('http://res.cloudinary.com/tchewa/image/upload/v1510946930/prismatic_r6gj5i.png') top center no-repeat;
+					background-size: cover;
+				}
+			}
+		}
+
+		.card-container {
+			transition: 1s ease-in;
+			height: 100%;
+			display: flex;
+			flex-wrap: nowrap;
+			position: absolute;
+			left: 0;
+			transition: all .5s ease-in-out;
+			perspective: 800px;
+
+			.card {
+				display: block;
+				transition: linear 1s;
+				padding: 15px 25px 25px;
+				width: 100%;
+				transition: transform 1s;
+
+				h1 {
+					font-family: 'Lato', sans-serif;
+					font-weight: 400;
+					font-size: 34px;
+					color: $dark-gray;
+					padding-bottom: 20px;
+					border-bottom: 1px solid $dark-gray;
+				}
+
+				p {
+					font-family: 'Roboto', sans-serif;
+					font-weight: 100;
+					font-size: 23px;
+					line-height: 1.4em;
+				}
+			}
+		}
+	}
+}
+
+.pagination-container {
+	position: absolute;
+	bottom: 20px;
+	right: 0px;
+	width: 100%;
+
+	.pagination-forward-container {
+		display: inline-block;
+		position: relative;
+		width: 42px;
+		height: 42px;
+		border-radius: 10px 0px 0px 10px;
+		background: $blue;
+		cursor: pointer;
+		float: right;
+
+		.forward-arrow {
+			display: block;
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-top: 2px solid $white;
+			border-right: 2px solid $white;
+			transform: rotate(45deg);
+			top: 10px;
+			left: 7px;
+		}
+	}
+
+	.pagination-dot-container {
+		display: inline-block;
+		float: right;
+		padding: 10px 15px 0 0;
+
+		.dot {
+			width: 10px;
+			height: 10px;
+			margin-left: 10px;
+			background-color: $gray;
+			display: inline-block;
+			border-radius: 5px;
+			cursor: pointer;
+
+			&.selected {
+				background-color: $blue;
+			}
+		}
+	}
+}
+
+// Tile Stuff
+.spaced {
+	padding: 50px 20px;
+}
+
+.tile-container {
+	background-color: $white;
+
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.tile {
+		position: relative;
+		width: 31%;
+		height: 400px;
+		background-color: $white;
+		padding: 20px;
+		margin-top: 20px;
+		transition: all 200ms ease-in-out;
+		color: $black;
+		overflow: hidden;
+		@include box-shadow(0, 0, 30, -10, $black);
+		&:hover {
+			transform: scale(1.12);
+			z-index: 2;
+			@include box-shadow(0, 0, 100, -10, $black);
+			background-color: $white;
+			color: $black;
+			.img-container {
+				transform: scale(0.5);
+				margin-top: -40px;
+				@include media($phone) {
+					transform: scale(1);
+					margin-top: 0px;
+				}
+			}
+			.hovered {
+				display: block;
+				transition: all 2s;
+			}
+			.hide-on-hover {
+				display: none;
+			}
+		}
+
+		@include media($tablet) {
+			width: 49%;
+		}
+
+		@include media($phone) {
+			width: 100%;
+		}
+
+		.img-container {
+			width: 80%;
+			margin: 25% auto;
+			transition: all 200ms ease-in-out;
+			img {
+				width: 100%;
+			}
+		}
+
+		.hidden-tile-content {
+			// background-color: rgba($blue, 0.8);
+			@include stacked-gradient(-215, 35, rgba(0,0,0,.4), rgba(3,169,244,.4), rgba(0,0,0,.4), rgba(0,0,0,.8), rgba(3,169,244,.8), rgba(0,0,0,.8));
+			position: absolute;
+			width: 100%;
+			left: 0;
+			bottom: -55%;
+			height: 55%;
+			transition-delay: 3s;
+			transition: all 200ms ease-in-out;
+			font-family: 'Montserrat', sans-serif;
+			color: $white;
+			font-size: 30px;
+			p {
+				padding: 20px;
+				text-align: center;
+				margin-top: 0px;
+			}
+		}
+	.hovered {
+			display: none;
+		}
+	}
+}
+
+
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+	width: 100%;
+}

@@ -1,0 +1,203 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: $black;
+	height: 100%;
+	margin: 0px;
+	h1, h2 {
+		margin: 0px;
+	}
+	h2 {
+		font-family: 'Roboto', sans-serif;
+	}
+}
+
+.article-carousel-container {
+	width: 100%;
+	height: 500px;
+	position: relative;
+	box-shadow: 0px 4px 25px $black;
+
+	.article-box {
+		position: absolute;
+		z-index: 2;
+		width: 80%;
+		height: 450px;
+		top: 48%;
+		left: 10%;
+		transform: translateY(-50%);
+
+		@include media($tablet) {
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 90%;
+		}
+
+		.title {
+			font-family: 'Roboto', sans-serif;
+			padding: 25px 25px 0px;
+			font-size: 20px;
+			font-weight: 100;
+			color: $white;
+		}
+	}
+
+	.mask {
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+		.canvas-container {
+			overflow: hidden;
+			height: 100%;
+			display: flex;
+			flex-wrap: nowrap;
+			position: absolute;
+			left: 0;
+
+			.canvas {
+				height: 100%;
+				display: block;
+				min-width: calc(100%/4);
+
+				&.slide-1 {
+					background-color: red;
+				}
+
+				&.slide-2 {
+					background-color: green;
+				}
+
+				&.slide-3 {
+					background-color: purple;
+				}
+
+				&.slide-4 {
+					background-color: blue;
+				}
+			}
+		}
+
+		.card-container {
+			// transition: 1s ease-in;
+			height: 100%;
+			display: flex;
+			flex-wrap: nowrap;
+			position: absolute;
+			left: 0;
+			// transition: all .5s ease-in-out;
+			perspective: 800px;
+
+			.card {
+				display: block;
+				transition: linear 1s;
+				padding: 15px 25px 25px;
+				width: 100%;
+				transition: transform 1s;
+
+				h1 {
+					font-family: 'Lato', sans-serif;
+					font-weight: 400;
+					font-size: 34px;
+					color: $white;
+					padding-bottom: 20px;
+					border-bottom: 1px solid $white;
+				}
+
+				p {
+					font-family: 'Roboto', sans-serif;
+					font-weight: 100;
+					font-size: 23px;
+					line-height: 1.4em;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+.pagination-container {
+	position: absolute;
+	top: 40%;
+	right: 0px;
+	width: 100%;
+	z-index: 2;
+
+	.pagination-forward-container {
+		display: inline-block;
+		position: relative;
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
+		float: right;
+		&.disabled {
+			opacity: .2;
+			pointer-events: none;
+			cursor: default;
+		}
+
+		.forward-arrow {
+			display: block;
+			position: absolute;
+			width: 35px;
+			height: 35px;
+			border-top: 2px solid $white;
+			border-right: 2px solid $white;
+			transform: rotate(45deg);
+			top: 10px;
+			right: 30px;
+		}
+	}
+	
+	.pagination-backward-container {
+		display: inline-block;
+		position: relative;
+		width: 50px;
+		height: 50px;
+		float: left;
+		cursor: pointer;
+		&.disabled {
+			opacity: .2;
+			pointer-events: none;
+			cursor: default;
+		}
+
+		.backward-arrow {
+			display: block;
+			position: absolute;
+			width: 35px;
+			height: 35px;
+			border-bottom: 2px solid $white;
+			border-left: 2px solid $white;
+			transform: rotate(45deg);
+			top: 10px;
+			left: 30px;
+			
+		}
+	}
+	
+	.pagination-dot-container {
+		display: none;
+		float: right;
+		padding: 10px 15px 0 0;
+
+		.dot {
+			width: 10px;
+			height: 10px;
+			margin-left: 10px;
+			background-color: $gray;
+			display: inline-block;
+			border-radius: 5px;
+			cursor: pointer;
+
+			&.selected {
+				background-color: $blue;
+			}
+		}
+	}
+}
+

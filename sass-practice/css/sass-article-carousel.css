@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #000;
+  height: 100%;
+  margin: 0px; }
+  body h1, body h2 {
+    margin: 0px; }
+  body h2 {
+    font-family: 'Roboto', sans-serif; }
+
+.article-carousel-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  box-shadow: 0px 4px 25px #000; }
+  .article-carousel-container .article-box {
+    position: absolute;
+    z-index: 2;
+    width: 80%;
+    height: 450px;
+    top: 48%;
+    left: 10%;
+    transform: translateY(-50%); }
+    @media only screen and (max-width: 767px) {
+      .article-carousel-container .article-box {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%; } }
+    .article-carousel-container .article-box .title {
+      font-family: 'Roboto', sans-serif;
+      padding: 25px 25px 0px;
+      font-size: 20px;
+      font-weight: 100;
+      color: #fff; }
+  .article-carousel-container .mask {
+    height: 100%;
+    position: relative;
+    overflow: hidden; }
+    .article-carousel-container .mask .canvas-container {
+      overflow: hidden;
+      height: 100%;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      position: absolute;
+      left: 0; }
+      .article-carousel-container .mask .canvas-container .canvas {
+        height: 100%;
+        display: block;
+        min-width: calc(100%/4); }
+        .article-carousel-container .mask .canvas-container .canvas.slide-1 {
+          background-color: red; }
+        .article-carousel-container .mask .canvas-container .canvas.slide-2 {
+          background-color: green; }
+        .article-carousel-container .mask .canvas-container .canvas.slide-3 {
+          background-color: purple; }
+        .article-carousel-container .mask .canvas-container .canvas.slide-4 {
+          background-color: blue; }
+    .article-carousel-container .mask .card-container {
+      height: 100%;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      position: absolute;
+      left: 0;
+      perspective: 800px; }
+      .article-carousel-container .mask .card-container .card {
+        display: block;
+        transition: linear 1s;
+        padding: 15px 25px 25px;
+        width: 100%;
+        transition: transform 1s; }
+        .article-carousel-container .mask .card-container .card h1 {
+          font-family: 'Lato', sans-serif;
+          font-weight: 400;
+          font-size: 34px;
+          color: #fff;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #fff; }
+        .article-carousel-container .mask .card-container .card p {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 100;
+          font-size: 23px;
+          line-height: 1.4em;
+          color: #fff; }
+
+.pagination-container {
+  position: absolute;
+  top: 40%;
+  right: 0px;
+  width: 100%;
+  z-index: 2; }
+  .pagination-container .pagination-forward-container {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    float: right; }
+    .pagination-container .pagination-forward-container.disabled {
+      opacity: .2;
+      pointer-events: none;
+      cursor: default; }
+    .pagination-container .pagination-forward-container .forward-arrow {
+      display: block;
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+      transform: rotate(45deg);
+      top: 10px;
+      right: 30px; }
+  .pagination-container .pagination-backward-container {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    float: left;
+    cursor: pointer; }
+    .pagination-container .pagination-backward-container.disabled {
+      opacity: .2;
+      pointer-events: none;
+      cursor: default; }
+    .pagination-container .pagination-backward-container .backward-arrow {
+      display: block;
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border-bottom: 2px solid #fff;
+      border-left: 2px solid #fff;
+      transform: rotate(45deg);
+      top: 10px;
+      left: 30px; }
+  .pagination-container .pagination-dot-container {
+    display: none;
+    float: right;
+    padding: 10px 15px 0 0; }
+    .pagination-container .pagination-dot-container .dot {
+      width: 10px;
+      height: 10px;
+      margin-left: 10px;
+      background-color: #5d5d5d;
+      display: inline-block;
+      border-radius: 5px;
+      cursor: pointer; }
+      .pagination-container .pagination-dot-container .dot.selected {
+        background-color: #03a9f4; }

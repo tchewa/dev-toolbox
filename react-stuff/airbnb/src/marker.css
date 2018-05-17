@@ -1,0 +1,29 @@
+.marker {
+	font-size: 16px;
+	background-color: #000;
+	color: #fff;
+	width: 30px;
+	height: auto;
+	padding: 5px 10px;
+	border-radius: 4px;
+	text-align: center;
+	box-shadow: 2px 2px 10px #000;
+	transition: .25s;
+}
+
+.marker.selected {
+	background-color: red;
+	z-index: 999;
+}
+
+.marker:hover {
+	background-color: #fff;
+	transform: scale(1.25);
+	color: #000;
+}
+
+.marker.selected:hover {
+	background-color: red;
+	transform: scale(1.25);
+	color: #fff;
+}

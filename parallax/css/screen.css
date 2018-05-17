@@ -1,0 +1,89 @@
+html {
+	position: relative;
+	overflow: hidden;
+}
+
+body {
+	background: #eed8bd;
+	color: #866030;
+	font-family: 'Montserrat', sans-serif;
+	height: 100%;
+	position: relative;
+}
+
+h1 {
+	font-size: 2.5em;
+	margin: 1em 0;
+}
+
+h4 {
+	font-size: 1.5em;
+	margin: 1em 0;
+}
+
+p {
+	margin: 1em 0;
+	line-height: 1.5;
+}
+
+.parallax {
+	perspective: 300px;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.parallax__layer {
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: transparent;
+	background-size: contain;
+	position: absolute;
+	right: -3%;
+	bottom: 0;
+	left: -3%;
+}
+
+.parallax__layer--05 {
+	transform: translateZ(0);
+	background-image: url(../images/AboutBannerLevel5.png);
+	top: 2em;
+}
+
+.parallax__layer--04 {
+	transform: translateZ(-150px) scale(1.52);
+	background-image: url(../images/AboutBannerLevel4.png);
+	top: 6em;
+}
+
+.parallax__layer--03 {
+	transform: translateZ(-300px) scale(2.03);
+	background-image: url(../images/AboutBannerLevel3.png);
+	top: 10em;
+}
+
+.parallax__layer--02 {
+	transform: translateZ(-450px) scale(2.52);
+	background-image: url(../images/AboutBannerLevel2.png);
+	top: 14em;
+}
+
+.parallax__layer--01 {
+	transform: translateZ(-600px) scale(3.05);
+	background-image: url(../images/AboutBannerLevel1.png);
+	top: 18em;
+}
+
+.about-page-content {
+	background: #866030;
+	position: relative;
+	margin-top: -1000px;
+	color: white;
+	padding: 50px 15%;
+	z-index: 50;
+}
+
+.group {
+	position: relative;
+	height: 1500px;
+}

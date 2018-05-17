@@ -1,0 +1,19 @@
+@mixin media($width) {
+	@media only screen and (max-width: #{$width}px ) {
+		@content;
+	}
+}
+
+@mixin box-shadow($horizontal, $vertical, $radius, $blur,  $color) {
+	box-shadow: #{$horizontal}px #{$vertical}px #{$radius}px #{$blur}px  $color;
+}
+
+
+@mixin gradient($direction, $colors...) {
+	background: linear-gradient(#{$direction}deg, $colors);
+}
+
+@mixin stacked-gradient($direction-one, $direction-two, $color1, $color2, $color3, $color4, $color5, $color6) {
+	background: linear-gradient(#{$direction-one}deg, $color1, $color2, $color3),
+				linear-gradient(#{$direction-two}deg, $color4, $color5, $color6);
+}

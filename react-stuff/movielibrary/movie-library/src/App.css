@@ -1,0 +1,110 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Cormorant Unicase', serif;
+}
+
+.movie-library-container {
+	width: 80%;
+	height: 800px;
+	margin: 0 auto;
+}
+
+.header-bar {
+	display: inline-block;
+	width: 100%;
+	margin: 50px 0px;
+}
+
+.header-bar h1 {
+	display: inline-block;
+	font-size: 50px;
+	margin: 0px;
+	text-decoration: underline;
+}
+
+.deleteMovie {
+	float: right;
+	border-radius: 20px;
+	width: 40px;
+	height: 40px;
+	background-color: red;
+	color: #fff;
+	font-size: 20px;
+	margin-top: -10px;
+	margin-right: -10px;
+	transition: .2s;
+}
+
+.deleteMovie:hover {
+	transform: scale(1.25);
+}
+
+label {
+	display: block;
+	font-size: 30px;
+	padding-bottom: 10px;
+}
+
+form {
+	margin: 0 0 50px;
+}
+
+input {
+	width: 30%;
+	padding: 20px;
+	font-size: 20px;
+	margin-bottom: 20px;
+	font-family: 'Cormorant Unicase', serif;
+}
+
+input::placeholder {
+	font-family: 'Cormorant Unicase', serif;
+	font-style: italic;
+}
+
+.add-movie {
+	padding: 20px;
+	font-size: 30px;
+	float: right;
+	font-family: 'Cormorant Unicase', serif;
+}
+
+.movie-tile-container {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 -20px 50px;
+	padding: 0 20px;
+}
+
+.movie-tile {
+	width: 32%;
+	height: 600px;
+	position: relative;
+	background-color: #3a3a3a;
+}
+
+.movie-info {
+	position: absolute;
+	bottom: 30px;
+	text-align: center;
+	width: 100%;
+	color: #fff;
+}
+
+.movie-title {
+	font-size: 40px;
+	margin: 0px;
+	padding: 0px 15px;
+}
+
+.movie-genre {
+	font-size: 20px;
+	font-style: italic;
+}
+
+.movie-year {
+	font-size: 30px;
+	font-weight: bold;
+	margin: 0px;
+}

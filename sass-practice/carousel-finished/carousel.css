@@ -1,0 +1,170 @@
+* {
+	box-sizing: border-box;
+}
+
+body, h1 {
+	margin: 0px;
+}
+
+.header {
+	width: 100%;
+	height: 500px;
+	position: relative;
+}
+
+.title {
+	font-family: 'Roboto', sans-serif;
+	padding: 25px 25px 0px;
+	font-size: 20px;
+	font-weight: 100;
+	color: #03a9f4;
+}
+
+.mask {
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.canvas-container {
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	position: absolute;
+	left: 0;
+	/*transition: all .5s ease-in-out;*/
+}
+
+.prevCard {
+	transform: rotateY(-180deg);
+}
+
+.canvas {
+	height: 100%;
+	display: block;
+	/*transition: linear 1s;*/
+	min-width: calc(100%/4);
+}
+
+.card-container {
+	transition: 1s ease-in;
+	height: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	position: absolute;
+	left: 0;
+	transition: all .5s ease-in-out;
+	perspective: 800px;
+}
+
+.card {
+	display: block;
+	transition: linear 1s;
+	padding: 15px 25px 25px;
+	width: 100%;
+	transition: transform 1s;
+}
+
+.card h1 {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 34px;
+	color: #3e3e3e;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #3e3e3e;
+}
+
+.card p {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	font-size: 23px;
+	line-height: 1.4em;
+}
+
+.message-box {
+	position: absolute;
+	z-index: 2;
+	width: 340px;
+	height: 450px;
+	background: #fff;
+	top: 48%;
+	left: 10%;
+	transform: translateY(-50%);
+	border-radius: 10px;
+}
+
+.slide-1 {
+	background: url('http://res.cloudinary.com/tchewa/image/upload/v1510942735/teton_kk9cxk.png') top center no-repeat;
+	background-size: cover;
+}
+
+.slide-2 {
+	background: url('http://res.cloudinary.com/tchewa/image/upload/v1510942735/moran_tzlfoq.png') top center no-repeat;
+	background-size: cover;
+}
+
+.slide-3 {
+	background: url('http://res.cloudinary.com/tchewa/image/upload/v1510942735/firehole_i7tats.png') top center no-repeat;
+	background-size: cover;
+}
+
+.slide-4 {
+	background: url('http://res.cloudinary.com/tchewa/image/upload/v1510946930/prismatic_r6gj5i.png') top center no-repeat;
+	background-size: cover;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	margin-left: 10px;
+	background-color: #5d5d5d;
+	display: inline-block;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.selected {
+	background-color: #03a9f4;
+}
+
+.pagination-container {
+	position: absolute;
+	bottom: 20px;
+	right: 0px;
+	width: 100%;
+}
+
+.pagination-dot-container {
+	display: inline-block;
+	float: right;
+	padding: 10px 15px 0 0;
+}
+
+.pagination-forward-container {
+	display: inline-block;
+	position: relative;
+	width: 42px;
+	height: 42px;
+	background: #03a9f4;
+	cursor: pointer;
+	float: right;
+}
+
+.forward-arrow {
+	display: block;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	transform: rotate(45deg);
+	top: 10px;
+	left: 7px;
+}
+

@@ -1,0 +1,1 @@
+In order to get this to work, you need to path to the correct css files and sass files, by creating these separate directories.  Also, you must run npm install grunt to create the nodes required for sass. 
